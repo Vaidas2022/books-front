@@ -1,119 +1,63 @@
+/* Bendras aplikacijos stilius */
 body {
-  font-family: sans-serif;
-  margin: 20px;
-  background-color: #f8f9fa; /* Šviesiai pilka fono spalva */
-  color: #343a40; /* Tamsiai pilka teksto spalva */
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f5f5f5;
+  color: #333;
 }
 
-h2 {
-  color: #007bff; /* Mėlyna antraštės spalva */
-  margin-bottom: 15px;
+/* Aplikacijos pagrindinis konteineris */
+div {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
 }
 
-ul {
-  list-style: none;
-  padding: 0;
+/* Navigacijos stilius */
+nav {
+  background-color: #007bff;
+  padding: 10px 20px;
+  border-radius: 8px;
   margin-bottom: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-li {
-  background-color: #ffffff;
-  padding: 15px;
-  margin-bottom: 10px;
-  border: 1px solid #dee2e6;
-  border-radius: 5px;
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
   display: flex;
-   justify-content: space-between; /* Sulygiuoja elementus */
-   align-items: center;
+  gap: 20px;
 }
 
-li:hover {
- background-color: #f0f0f0; /* Šviesiai pilka hover spalva */
+nav ul li {
+  display: inline;
 }
 
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
 
+nav ul li a:hover {
+  text-decoration: underline;
+}
+
+/* Turinio srities stilius */
+div > div {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Bendros nuorodos stilius */
 a {
-    color: #28a745; /* Žalia nuorodos spalva */
-    text-decoration: none;
-    margin-left: 10px;
+  color: #007bff;
+  text-decoration: none;
 }
 
 a:hover {
-    text-decoration: underline;
-    color: #1e7e34; /* Tamsesnė žalia hover spalva */
-}
-
-
- button {
-   background-color: #dc3545; /* Raudona mygtuko spalva */
-   color: white;
-   padding: 8px 15px;
-   border: none;
-   border-radius: 4px;
-   cursor: pointer;
-   margin-left: 10px;
-}
-
-button:hover {
-  background-color: #c82333; /* Tamsesnė raudona hover spalva */
-}
-
-form {
- background-color: white;
- padding: 20px;
- border: 1px solid #dee2e6;
- border-radius: 5px;
-}
-
-form div {
- margin-bottom: 10px;
-}
-
-form label {
-  display: block;
-  margin-bottom: 5px;
-  color: #495057;
-}
-
- form input[type="text"],
- form select {
-     width: 100%;
-     padding: 8px;
-     border: 1px solid #ced4da;
-     border-radius: 4px;
-     box-sizing: border-box; /* Uždaro padidinimą nuo padding */
- }
-
-form button[type="submit"] {
-     background-color: #007bff; /* Mėlyna formos mygtuko spalva */
-      color: white;
-     padding: 10px 15px;
-     border: none;
-     border-radius: 4px;
-     cursor: pointer;
- }
-
-form button[type="submit"]:hover {
-    background-color: #0056b3; /* Tamsesnė mėlyna hover spalva */
-}
-
- nav ul {
-     display: flex;
-     padding: 0;
-     list-style: none;
-     background-color: #343a40;
-     margin-bottom: 20px;
- }
-
- nav li {
-     padding: 10px;
- }
-
- nav a {
-     color: darkgreen;
-    text-decoration: none;
-}
-
- nav a:hover {
-     text-decoration: underline;
+  text-decoration: underline;
 }
