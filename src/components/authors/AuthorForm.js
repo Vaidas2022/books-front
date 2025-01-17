@@ -1,51 +1,40 @@
-import React, { useState, useEffect } from 'react';
-import axios from '../../AxiosConfig';
-import { useParams, useNavigate } from 'react-router-dom';
+import React, { useState } from "react";
+import "./AuthorForm.css";
 
-function AuthorForm({ isEdit = false }) {
-  const { id } = useParams();
-  const navigate = useNavigate();
-  const [name, setName] = useState('');
-
-  useEffect(() => {
-    if (isEdit && id) {
-      fetchAuthor();
-    }
-  }, [id, isEdit]);
-
-  const fetchAuthor = async () => {
-    try {
-      const response = await axios.get(`/authors/${id}`);
-      setName(response.data.name);
-    } catch (error) {
-      console.error('Klaida gaunant autorių:', error);
-    }
-  };
+function AuthorForm({ isEdit, onSubmit }) {
+  const [name, setName] = useState("");
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    const authorData = { name };
+
     try {
-      if (isEdit) {
-        await axios.put(`/authors/${id}`, { name });
-      } else {
-        await axios.post('/authors', { name });
-      }
-      navigate('/authors');
+      await onSubmit(authorData); // Funkcija, tvarkanti pridėjimą/redagavimą
+      setName(""); // Išvalome lauką
     } catch (error) {
-      console.error('Klaida išsaugant autorių:', error);
+      console.error("Klaida pateikiant formą:", error);
     }
   };
+
   return (
-    <form onSubmit={handleSubmit}>
-      <h2>{isEdit ? 'Redaguoti autorių' : 'Pridėti autorių'}</h2>
-      <div>
-        <label>Vardas:</label>
-        <input type="text" value={name} onChange={(e) => setName(e.target.value)} required />
+    <form onSubmit={handleSubmit} className="author-form">
+      <h2>{isEdit ? "Redaguoti autorių" : "Pridėti autorių"}</h2>
+      <div className="form-group">
+        <label htmlFor="author-name">Vardas:</label>
+        <input
+          id="author-name"
+          type="text"
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+          required
+        />
       </div>
-      <button type="submit">{isEdit ? 'Redaguoti' : 'Pridėti'}</button>
+      <button type="submit" className="submit-button">
+        {isEdit ? "Redaguoti" : "Pridėti"}
+      </button>
     </form>
   );
 }
 
 export default AuthorForm;
-
