@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-    import axios from '../../AxiosConfig';
-    import { Link } from 'react-router-dom';
+import axios from '../../AxiosConfig';
+import { Link } from 'react-router-dom';
 
     function BookList() {
         const [books, setBooks] = useState([]);
@@ -28,20 +28,20 @@ import React, { useState, useEffect } from 'react';
         };
 
         return (
-            <div>
-                <h2>Knygų sąrašas</h2>
-                <ul>
-                    {books.map((book) => (
-                        <li key={book.id}>
-                            {book.name} (Autorius: {book.author ? book.author.name : 'Nėra autoriaus'})
-                            <Link to={`/books/edit/${book.id}`}> Redaguoti</Link>
-                            <button onClick={() => handleDelete(book.id)}>Trinti</button>
-                        </li>
-                    ))}
-                </ul>
-                <Link to="/books/add">Pridėti knygą</Link>
-            </div>
-        );
+                <div>
+                    <h2>Knygų sąrašas</h2>
+                    <ul>
+                        {books.map((book) => (
+                            <li key={book.book_id}>
+                                {book.book_name} (Autorius: {book.author_name || 'Nėra autoriaus'}) {/* Naudojame book_name ir author_name */}
+                                <Link to={`/books/edit/${book.book_id}`}> Redaguoti</Link> {/* Naudojame book_id */}
+                                <button onClick={() => handleDelete(book.book_id)}>Trinti</button>  {/* Naudojame book_id */}
+                            </li>
+                        ))}
+                    </ul>
+                    <Link to="/books/add">Pridėti knygą</Link>
+                </div>
+            );
     }
 
     export default BookList;
