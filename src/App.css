@@ -1,38 +1,119 @@
-.App {
-  text-align: center;
+body {
+  font-family: sans-serif;
+  margin: 20px;
+  background-color: #f8f9fa; /* Šviesiai pilka fono spalva */
+  color: #343a40; /* Tamsiai pilka teksto spalva */
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+h2 {
+  color: #007bff; /* Mėlyna antraštės spalva */
+  margin-bottom: 15px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+ul {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 20px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+li {
+  background-color: #ffffff;
+  padding: 15px;
+  margin-bottom: 10px;
+  border: 1px solid #dee2e6;
+  border-radius: 5px;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+   justify-content: space-between; /* Sulygiuoja elementus */
+   align-items: center;
 }
 
-.App-link {
-  color: #61dafb;
+li:hover {
+ background-color: #f0f0f0; /* Šviesiai pilka hover spalva */
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+
+a {
+    color: #28a745; /* Žalia nuorodos spalva */
+    text-decoration: none;
+    margin-left: 10px;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: #1e7e34; /* Tamsesnė žalia hover spalva */
+}
+
+
+ button {
+   background-color: #dc3545; /* Raudona mygtuko spalva */
+   color: white;
+   padding: 8px 15px;
+   border: none;
+   border-radius: 4px;
+   cursor: pointer;
+   margin-left: 10px;
+}
+
+button:hover {
+  background-color: #c82333; /* Tamsesnė raudona hover spalva */
+}
+
+form {
+ background-color: white;
+ padding: 20px;
+ border: 1px solid #dee2e6;
+ border-radius: 5px;
+}
+
+form div {
+ margin-bottom: 10px;
+}
+
+form label {
+  display: block;
+  margin-bottom: 5px;
+  color: #495057;
+}
+
+ form input[type="text"],
+ form select {
+     width: 100%;
+     padding: 8px;
+     border: 1px solid #ced4da;
+     border-radius: 4px;
+     box-sizing: border-box; /* Uždaro padidinimą nuo padding */
+ }
+
+form button[type="submit"] {
+     background-color: #007bff; /* Mėlyna formos mygtuko spalva */
+      color: white;
+     padding: 10px 15px;
+     border: none;
+     border-radius: 4px;
+     cursor: pointer;
+ }
+
+form button[type="submit"]:hover {
+    background-color: #0056b3; /* Tamsesnė mėlyna hover spalva */
+}
+
+ nav ul {
+     display: flex;
+     padding: 0;
+     list-style: none;
+     background-color: #343a40;
+     margin-bottom: 20px;
+ }
+
+ nav li {
+     padding: 10px;
+ }
+
+ nav a {
+     color: darkgreen;
+    text-decoration: none;
+}
+
+ nav a:hover {
+     text-decoration: underline;
 }
